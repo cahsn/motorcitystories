@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motor City Stories</title>
+<meta name="description" content="The stories of America's classic cars and the men who built them, told by a Brit who always wanted to live in Detroit. New episodes Saturdays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE6D6;
+    --paper-2:#E3DAC6;
+    --ink:#2A2420;
+    --ink-2:#5C534C;
+    --rule:#C9BEA8;
+    --burgundy:#7A2E2E;
+    --chrome:#A8A39B;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1F1B18;
+      --paper-2:#2A2420;
+      --ink:#EDE6D6;
+      --ink-2:#B8AE9E;
+      --rule:#4A423A;
+      --burgundy:#B5514F;
+      --chrome:#6E6862;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1F1B18;
+    --paper-2:#2A2420;
+    --ink:#EDE6D6;
+    --ink-2:#B8AE9E;
+    --rule:#4A423A;
+    --burgundy:#B5514F;
+    --chrome:#6E6862;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size:1.0625rem;
+    line-height:1.6;
+  }
+  a{color:var(--burgundy)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--burgundy);outline-offset:3px}
+  .wrap{width:min(100% - 2.5rem, 60rem);margin-inline:auto}
+
+  header{padding:1.25rem 0;border-bottom:1px solid var(--rule)}
+  header .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+  .mark{font-family:Oswald, "Arial Narrow", Impact, sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+  nav a{color:var(--ink-2);text-decoration:none;margin-left:1.25rem;font-size:.95rem}
+  nav a:hover{color:var(--burgundy)}
+
+  .hero{padding:4rem 0 3.5rem}
+  .hero h1{
+    font-family:Oswald, "Arial Narrow", Impact, sans-serif;
+    font-weight:600;
+    font-size:clamp(2.6rem, 8vw, 6rem);
+    line-height:.98;
+    margin:0 0 1.5rem;
+    max-width:14ch;
+  }
+  .hero p{font-size:clamp(1.15rem, 2.2vw, 1.4rem);max-width:34ch;margin:0 0 2rem;color:var(--ink-2)}
+  .btn{
+    display:inline-block;
+    font-family:Oswald, "Arial Narrow", sans-serif;
+    font-weight:500;
+    letter-spacing:.03em;
+    font-size:1.05rem;
+    background:var(--burgundy);
+    color:var(--paper);
+    padding:.85rem 1.4rem;
+    text-decoration:none;
+    border-radius:3px;
+  }
+  .btn:hover{filter:brightness(1.1)}
+  .btn.quiet{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:.75rem}
+
+  section{padding:3.5rem 0;border-top:1px solid var(--rule)}
+  h2{
+    font-family:Oswald, "Arial Narrow", sans-serif;
+    font-weight:500;
+    font-size:1.9rem;
+    margin:0 0 1.75rem;
+  }
+  .two{display:grid;grid-template-columns:1fr;gap:2rem}
+  @media(min-width:44rem){.two{grid-template-columns:2fr 3fr}}
+  .about p{max-width:62ch;margin:0 0 1rem}
+
+  .eps{list-style:none;padding:0;margin:0}
+  .eps li{
+    display:grid;
+    grid-template-columns:5.5rem 1fr;
+    gap:1rem;
+    padding:1.1rem 0;
+    border-top:1px solid var(--rule);
+    align-items:start;
+  }
+  .eps li:first-child{border-top:0}
+  .eps time{font-family:Oswald, sans-serif;color:var(--ink-2);font-size:.95rem;padding-top:.25rem}
+  .eps strong{font-family:Oswald, sans-serif;font-weight:500;font-size:1.25rem;display:block;line-height:1.25}
+  .eps .out strong a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--burgundy)}
+  .eps p{margin:.25rem 0 0;color:var(--ink-2);font-size:1rem;max-width:56ch}
+  .eps .soon strong{color:var(--ink-2)}
+
+  .archives ul{padding-left:1.1rem;margin:0;max-width:60ch}
+  .archives li{margin-bottom:.5rem}
+
+  .memory{background:var(--paper-2)}
+  .memory p{max-width:56ch;margin:0 0 1.25rem}
+
+  footer{padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--ink-2);font-size:.9rem}
+  footer p{margin:.3rem 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top">MOTOR CITY STORIES</a>
+    <nav>
+      <a href="#episodes">Episodes</a>
+      <a href="#about">About</a>
+      <a href="#memory">Your story</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero wrap">
+    <h1>The cars you drove, and the men who built them.</h1>
+    <p>Long-form stories from Detroit's great years, told by a Brit who spent his childhood wishing he lived there. One episode a week.</p>
+    <a class="btn" href="https://www.youtube.com/@MotorCityStories">Watch on YouTube</a>
+    <a class="btn quiet" href="#episodes">See the episodes</a>
+  </div>
+
+  <section id="episodes">
+    <div class="wrap">
+      <h2>Episodes</h2>
+      <ul class="eps">
+        <li class="out">
+          <time datetime="2026-09-16">16 Sep</time>
+          <div>
+            <strong><a href="https://www.youtube.com/@MotorCityStories">DeLorean: the man who invented the muscle car</a></strong>
+            <p>Before the stainless-steel car, John DeLorean built the 1964 Pontiac GTO against General Motors' own rules. The Daytona test, the ringer engine, and the fourteenth floor.</p>
+          </div>
+        </li>
+        <li class="soon">
+          <time datetime="2026-09-26">26 Sep</time>
+          <div>
+            <strong>Ford's biggest mistake: the Edsel</strong>
+            <p>How Ford lost a quarter of a billion dollars on one car, and the designer who carried the blame for the rest of his life.</p>
+          </div>
+        </li>
+        <li class="soon">
+          <time datetime="2026-10-03">3 Oct</time>
+          <div>
+            <strong>Studebaker: 114 years, from wagons to the Avanti</strong>
+            <p>A company older than the automobile itself, and how South Bend lost it in one week in December 1963.</p>
+          </div>
+        </li>
+        <li class="soon">
+          <time datetime="2026-10-10">10 Oct</time>
+          <div>
+            <strong>Carroll Shelby: the chicken farmer who beat Ferrari</strong>
+            <p>The Cobra, the GT40, and Le Mans 1966.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap two">
+      <h2>About</h2>
+      <div class="about">
+        <p>I'm Charlie. I grew up in England, four thousand miles from Detroit, looking at pictures of Cadillacs, Chevelles and GTOs and wishing I lived there. Motor City Stories is where I tell the stories of those cars and the men who built them, to the people who were actually there.</p>
+        <p>Every episode is written and narrated by me, built on books, period articles and court records. The archive film is real. Some scenes are illustrated with AI-assisted painted animation, and no real faces are ever generated. Sources are listed under every video.</p>
+        <p>New episodes Saturdays, 6pm Eastern.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="archives">
+    <div class="wrap two">
+      <h2>Where the footage comes from</h2>
+      <ul>
+        <li><a href="https://archive.org/details/prelinger">Prelinger Archives</a>, including the Jam Handy films made in Detroit for GM and Ford, 1930s to 1960s</li>
+        <li><a href="https://catalog.archives.gov/">US National Archives</a>, Ford Motor Company collection, 1903 to 1954</li>
+        <li><a href="https://www.loc.gov/pictures/">Library of Congress</a>, Detroit Publishing Company and FSA/OWI photographs</li>
+        <li>Wikimedia Commons contributors, credited in each video</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="memory" class="memory">
+    <div class="wrap two">
+      <h2>If you were there</h2>
+      <div>
+        <p>If you drove one of these cars, or your dad did, or the kid down the street had one, I'd like to hear it. Those memories are the one thing I can't get from the archives, and the best ones end up in the episodes.</p>
+        <a class="btn" href="mailto:hello@motorcitystories.com?subject=What%20I%20remember">Tell me what you remember</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Motor City Stories. Written and narrated by Charlie.</p>
+    <p>Archive footage: Prelinger Archives; US National Archives, Ford Motor Company Collection; Library of Congress; Wikimedia Commons contributors (CC BY).</p>
+  </div>
+</footer>
+
+</body>
+</html>
